@@ -31,6 +31,9 @@ body.dark-mode {
   position: fixed;
   height: 80px;
   width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
 .nav {
@@ -100,7 +103,7 @@ body.dark-mode {
   top: 80px;
   left: 0;
   width: 100%;
-  height: 100vh;
+  
   background-color: #faf8f8;
   padding: 0px 40px 0px 10px;
   transform: translateX(-100%);
@@ -140,6 +143,7 @@ body.dark-mode {
   padding: 10px 20px;
   color: #fff;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -164,18 +168,46 @@ body.dark-mode {
 /* Bio styles */
 
 .my-name {
-    padding: 40px 20px 0px 80px;
+    padding: 80px 20px 0px 20px;
     width: 100%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     background: linear-gradient(90deg, #cccfed, #efecec);
+    opacity: 0;
+    /* animation: slidedown 1.8s ease forwards; */
+    animation: dropIn 0.9s ease-out forwards;
 }
+
+@keyframes dropIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-120px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+
+  80% {
+    transform: translateY(-5px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .wrap-content {
   display: block;
-  margin-top: 120px;
+  margin-top: 80px;
+  text-align: justify;
+  font-size: 18px;
+
   
 }
 
@@ -183,13 +215,37 @@ body.dark-mode {
   max-width: 700px;
 }
 
-.my-name h2 {
+.wrap-content .typing {
+  color: #000000;
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(30, end) forwards, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.wrap-content h2 {
     font-size: 32px;
     margin-bottom: 10px;
     color: #0e0e0e;
 }
 
-.my-name h2 span {
+.wrap-content h2 span {
     color: #1a237e;
 }
 
@@ -207,7 +263,6 @@ body.dark-mode {
     border-radius: 5px;
     cursor: pointer;
     font-size: 12px;
-    margin-bottom: 20px;
 }
 
 .bio-buttons .contact-button {
@@ -216,19 +271,195 @@ body.dark-mode {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 20px;
+}
+
+.profile-image {
+  margin: 40px 40px 0px 40px;
 }
 
 .profile-image img {
   border-radius: 50%;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 30px;
 }
 
 .profile-image img:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+@media (min-width: 1024px) {
+.profile-image img {
+    width: 350px;
+    height: 350px;
+  }
+
+  .wrap-content h2 {
+    font-size: 45px;
+  }
+
+  .my-name {
+    padding: 80px 40px 40px 40px;
+  }
+
+  .wrap-content {
+  text-align: left;
+  font-size: 20px;
+  }
+
+  .tab-content p {
+  text-align: justify;
+  }
+
+    .about-me h2 {
+      color: #1a237e;
+      text-align: center;
+      font-size: 30px;
+  
+    }
+}
+
+/* About Me Styles */
+
+.about-me {
+  display: block;
+  padding: 20px 30px 20px 30px;
+}
+
+.about-me h2 {
+  color: #1a237e;
+  text-align: center;
+  
+}
+
+.about-me-tab {
+  display: flex;
+  gap: 20px;
+}
+
+.about-me-tab button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #000000;
+  display: block;
+}
+
+
+.about-me-tab button:hover {
+  color: #212a84;
+}
+
+.tab-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.get-in-touch-button button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: #1a237e;
+  color: #fff;margin-top: 20px;
+  cursor: pointer;
+}
+
+/* My projects style */
+
+.my-project-content {
+  display: block;
+  padding: 0px 30px 20px 30px;
+}
+
+.my-projects h2 {
+font-size: 30px;
+color: #1a237e;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.my-projects p {
+font-size: 18px;
+line-height: 1.6;
+text-align: justify;
+
+}
+
+.project {
+  margin-top: 10px;
+  border: 1px solid #1a237e;
+  border-radius: 10px;
+}
+
+.project h4 {
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.project p {
+  font-size: 18px;
+  text-align: justify;
+  padding: 10px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.project img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.view button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: #1a237e;
+  color: #fff;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.stack-used {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.stack-used button {
+  background-color: #e9eaef;
+  color: #1a237e;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
 }

@@ -8,7 +8,7 @@ const Bio = () => {
         <div className="wrap-content">
           <h2>
             Hi, I'm <span>Damilare Festus</span>
-            <br /> A Frontend Developer
+            <br /> <span className="typing">A Frontend Developer</span>
           </h2>
 
           <p>
