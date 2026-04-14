@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Bio from './components/Bio'
 import AboutMe from './components/AboutMe'
 import MyProjects from './components/MyProjects'
+import Contact from './components/Contact'
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
       <Bio />
       <AboutMe />
       <MyProjects />
+      <Contact />
     </div>
   )
 }
