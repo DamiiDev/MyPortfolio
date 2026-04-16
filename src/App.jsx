@@ -5,7 +5,7 @@ import Bio from "./components/Bio";
 import AboutMe from "./components/AboutMe";
 import MyProjects from "./components/MyProjects";
 import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer.jsx";
 import Skills from "./pages/Skills";
 
 const App = () => {
