@@ -1,5 +1,10 @@
 import React from "react";
 import image from "../assets/dammie.jpeg";
+import devtrybe from "../assets/devdev.jpg";
+import jobtracker from "../assets/jobtrackerr.jpg";
+import quiz from "../assets/quizz.jpg";
+import portfolio from "../assets/portport.jpg";
+import authen from "../assets/auth.jpg";
 
 const MyProjects = () => {
   return (
@@ -20,7 +25,7 @@ const MyProjects = () => {
       </div>
       <div className="projects-grid">
         <div className="project">
-          <img src={image} alt="DevTrybe" />
+          <img src={devtrybe} alt="DevTrybe" />
           <h4>DevTrybe</h4>
           <p>
             A full-stack web application built to connect developers and
@@ -42,13 +47,13 @@ const MyProjects = () => {
             <a href="#devtrybe">
               <button>View Live</button>
             </a>
-            <a href="#devtrybe">
+            <a href="https://github.com/DamiiDev/Dynamic-User-Profile-Dashboard-React-.git">
               <button>View Github</button>
             </a>
           </div>
         </div>
         <div className="project">
-          <img src={image} alt="JobTracker" />
+          <img src={jobtracker} alt="JobTracker" />
           <h4>JobTracker</h4>
           <p>
             A web-based productivity application developed to help users
@@ -69,13 +74,13 @@ const MyProjects = () => {
             <a href="#devtrybe">
               <button>View Live</button>
             </a>
-            <a href="#devtrybe">
+            <a href="https://github.com/DamiiDev/Job-Tracker-App.git">
               <button>View Github</button>
             </a>
           </div>
         </div>
         <div className="project">
-          <img src={image} alt="QuizApp" />
+          <img src={quiz} alt="QuizApp" />
           <h4>Quiz App</h4>
           <p>
             An interactive and responsive quiz application designed to enhance
@@ -91,16 +96,16 @@ const MyProjects = () => {
             <button>CSS</button>
           </div>
           <div className="view">
-            <a href="#devtrybe">
+            <a href="https://quiz-game-sable-theta.vercel.app/">
               <button>View Live</button>
             </a>
-            <a href="#devtrybe">
+            <a href="https://github.com/DamiiDev/Quiz-Game.git">
               <button>View Github</button>
             </a>
           </div>
         </div>
         <div className="project">
-          <img src={image} alt="Portfolio" />
+          <img src={portfolio} alt="Portfolio" />
           <h4>Portfolio</h4>
           <p>
             A modern, responsive personal portfolio website developed to
@@ -120,14 +125,14 @@ const MyProjects = () => {
             <a href="#devtrybe">
               <button>View Live</button>
             </a>
-            <a href="#devtrybe">
+            <a href="https://github.com/DamiiDev/DamiDev.git">
               <button>View Github</button>
             </a>
           </div>
         </div>
         <div className="project">
-          <img src={image} alt="LoginUI" />
-          <h4>Login UI</h4>
+          <img src={authen} alt="LoginUI" />
+          <h4>Authentication UI</h4>
           <p>
             A well-structured and responsive authentication interface designed
             to provide a seamless user experience for login and registration
@@ -143,10 +148,10 @@ const MyProjects = () => {
             <button>CSS</button>
           </div>
           <div className="view">
-            <a href="#devtrybe">
+            <a href="https://loginpage-nine-eosin.vercel.app/">
               <button>View Live</button>
             </a>
-            <a href="#devtrybe">
+            <a href="https://github.com/DamiiDev/Loginpage.git">
               <button>View Github</button>
             </a>
           </div>
