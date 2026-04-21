@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../assets/dammie.jpeg";
+import image from "../assets/imageprof.jpeg";
 
 const Bio = () => {
   return (

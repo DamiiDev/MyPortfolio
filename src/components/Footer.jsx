@@ -41,21 +41,22 @@ const Footer = () => {
           >
             damilarefestus12@gmail.com
           </a>
-          <br />
-          <a
-            href="https://github.com/DamiiDev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/damilare-festus-915386202/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin />
-          </a>
+          <div className="icons">
+            <a
+              href="https://github.com/DamiiDev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/damilare-festus-915386202/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
         </div>
       </div>
       <div className="copyright">

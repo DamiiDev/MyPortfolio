@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import devtrybe from "../assets/devdev.jpg";
 import jobtracker from "../assets/Jobtrackerr.jpg";
 import quiz from "../assets/quizz.jpg";
@@ -6,20 +6,32 @@ import portfolio from "../assets/portport.jpg";
 import authen from "../assets/auth.jpg";
 
 const MyProjects = () => {
+  useEffect(() => {
+    const cards = document.querySelectorAll(".project");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.1 },
+    );
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="my-project-content">
       <div id="projects" className="my-projects">
         <h2>My Projects</h2>
         <p>
-          Every project in this collection is crafted with deliberate attention
-          to clean design, responsiveness, and performance. From initial concept
-          through to deployment, I transform ideas into visually compelling,
-          fully functional web experiences powered by React and Tailwind CSS.
-          This portfolio spans a range of work: landing pages, reusable UI
-          component libraries, and responsive layouts built to scale. Each
-          project represents a milestone in my growth as a frontend developer
-          and reflects my ongoing transition into fullstack development building
-          not just great interfaces, but complete, end-to-end solutions.
+          A curated collection of projects built with clean design, performance,
+          and responsiveness at the core. Each one represents a real milestone —
+          from landing pages and UI components to full React applications. Built
+          primarily with React and Tailwind CSS, these projects reflect my
+          growth as a developer and my ongoing push into full-stack development.
         </p>
       </div>
       <div className="projects-grid">
@@ -27,15 +39,12 @@ const MyProjects = () => {
           <img src={devtrybe} alt="DevTrybe" />
           <h4>DevTrybe</h4>
           <p>
-            A full-stack web application built to connect developers and
-            showcase their professional profiles in a centralized platform.
-            Devtrybe enables users to create personalized profiles, follow other
-            developers, and seamlessly access their social platforms such as
-            LinkedIn, GitHub, and Twitter. The application incorporates secure
-            user authentication, dynamic profile management, and scalable data
-            handling. It is designed with a clean, intuitive interface to
-            enhance user interaction and foster a collaborative developer
-            community.
+            DevTrybe is a full-stack platform built to connect developers and
+            showcase their profiles in one place. Users can create profiles,
+            follow other developers, and link their GitHub, LinkedIn, and
+            Twitter. Features include secure authentication, dynamic profile
+            management, and a clean interface designed to foster a collaborative
+            developer community.
           </p>
           <div className="stack-used">
             <button>React</button>
@@ -55,14 +64,11 @@ const MyProjects = () => {
           <img src={jobtracker} alt="JobTracker" />
           <h4>JobTracker</h4>
           <p>
-            A web-based productivity application developed to help users
-            efficiently manage and monitor their job application process. It
-            allows users to track applications across different stages—such as
-            applied, interview, and offer—while keeping detailed records for
-            each opportunity. The system is built with an intuitive and
-            user-friendly interface, enabling real-time updates and easy
-            navigation, ultimately helping users stay organized and focused
-            during their job search.
+            JobTracker is a productivity app that helps users manage and monitor
+            their job search in one place. Track applications across stages
+            applied, interview, and offer with detailed records for each
+            opportunity. Built with a clean, intuitive interface for real-time
+            updates and easy navigation.
           </p>
           <div className="stack-used">
             <button>HTML</button>
@@ -82,12 +88,10 @@ const MyProjects = () => {
           <img src={quiz} alt="QuizApp" />
           <h4>Quiz App</h4>
           <p>
-            An interactive and responsive quiz application designed to enhance
-            user engagement through dynamic question rendering and real-time
-            feedback. Users can participate in quizzes, receive instant results,
-            and track their performance through an integrated scoring system.
-            The application focuses on delivering a smooth and engaging user
-            experience with a clean interface and efficient state management.
+            An interactive quiz app built for engagement and performance. Users
+            answer dynamic questions, receive instant feedback, and track their
+            scores in real time. Built with efficient state management and a
+            clean interface designed for a smooth, distraction-free experience.
           </p>
           <div className="stack-used">
             <button>HTML</button>
@@ -107,13 +111,10 @@ const MyProjects = () => {
           <img src={portfolio} alt="Portfolio" />
           <h4>Portfolio</h4>
           <p>
-            A modern, responsive personal portfolio website developed to
-            effectively showcase projects, technical skills, and professional
-            experience. The portfolio is designed with a strong emphasis on user
-            experience, featuring clean layouts, intuitive navigation, and
-            optimized performance across various devices and screen sizes. It
-            serves as a central hub to highlight personal branding and technical
-            expertise.
+            A responsive personal portfolio built to showcase projects, skills,
+            and experience in one clean space. Designed with a strong focus on
+            user experience, intuitive navigation, and performance across all
+            devices. The site you're looking at right now.
           </p>
           <div className="stack-used">
             <button>React</button>
@@ -133,12 +134,10 @@ const MyProjects = () => {
           <img src={authen} alt="LoginUI" />
           <h4>Authentication UI</h4>
           <p>
-            A well-structured and responsive authentication interface designed
-            to provide a seamless user experience for login and registration
-            processes. It includes form validation, user-friendly input
-            handling, and modern UI design principles to ensure accessibility
-            and usability. The interface is optimized for responsiveness and can
-            be easily integrated into larger applications requiring secure user
+            A clean, responsive authentication interface covering login and
+            registration flows. Built with form validation, user-friendly input
+            handling, and modern UI principles. Fully responsive and structured
+            for easy integration into any application requiring secure user
             authentication.
           </p>
           <div className="stack-used">

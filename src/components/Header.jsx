@@ -4,6 +4,7 @@ import { FiMenu } from "react-icons/fi";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
 import { FiDownload } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,22 +49,24 @@ const Header = () => {
           <a href="#">Home</a>
           <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
+          <Link className="nav-link" to="/skills">
+            Skills
+          </Link>
           <a href="#contact">Contact</a>
         </div>
         <div className="download-darkMode">
           <div className="desktop-download">
-            <a href="/Festus Damilare Michael Re.pdf" download>
+            <a href="/Festus Damilare CV.pdf" download>
               <FiDownload /> Download Resume
             </a>
           </div>
-          <div className="right-icons">
+          {/* <div className="right-icons">
             <div className="dark-mode">
               <button onClick={() => setIsDarkMode((d) => !d)}>
                 {isDarkMode ? <FiSun size={24} /> : <FiMoon size={24} />}
               </button>
             </div>
-          </div>
+          </div> */}
           <div className="menu-icon" onClick={() => setIsOpen(true)}>
             <FiMenu size={24} />
           </div>
@@ -83,9 +86,12 @@ const Header = () => {
         <a href="#" onClick={() => setIsOpen(false)}>
           Experience
         </a>
-        <a href="#education" onClick={() => setIsOpen(false)}>
+        {/* <a href="#education" onClick={() => setIsOpen(false)}>
           Education
-        </a>
+        </a> */}
+        <Link className="nav-link" to="/skills" onClick={() => setIsOpen(false)}>
+          Skills
+        </Link>
         <a href="#contact" onClick={() => setIsOpen(false)}>
           Contact
         </a>
